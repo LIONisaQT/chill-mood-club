@@ -3,6 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import firebase from 'firebase/app';
+
+firebase.initializeApp({
+  apiKey: "AIzaSyCSsicozQdYnYPMG3lqAgMVqU5T4EnPTok",
+  authDomain: "chill-mood-club.firebaseapp.com",
+  projectId: "chill-mood-club",
+  storageBucket: "chill-mood-club.appspot.com",
+  messagingSenderId: "665386257819",
+  appId: "1:665386257819:web:7b00c2dc7fc80f4dba653e",
+  measurementId: "G-M1RQD8DGV6"
+});
 
 ReactDOM.render(
   <React.StrictMode>
