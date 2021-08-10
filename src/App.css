@@ -1,4 +1,4 @@
-@import url(colors.css);
+@import url(/src/css/colors.css);
 
 #root {
   height: 100vh;
@@ -14,7 +14,12 @@
   max-height: 100vh;
   max-width: 100vw;
   font-size: calc(10px + 2vmin);
-  color: var(--white);
+  color: var(--light-yellow);
+  font-size: medium;
+}
+
+.Centered {
+  text-align: center;
 }
 
 @media screen and (min-width: 1921px) {
@@ -26,9 +31,29 @@
 
 .Grid {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 189px 1fr;
   gap: 0 80px;
-  margin: 10vh 80px;
+  margin: 80px;
+}
+
+.TopHeader {
+  font-size:x-large;
+  margin-bottom: 30px;
+}
+
+.Divider {
+  border: none;
+  height: 2px;
+  background: var(--light-purple-fade);
+  border-radius: 8px;
+}
+
+.PlaylistSection {
+  margin-top: 30px;
+}
+
+.BackgroundSection {
+  margin-top: 40px;
 }
 
 .IFrameContainer {
@@ -46,4 +71,10 @@ iframe {
 	right: 0;
 	width: 100%;
 	height: 100%;
+}
+
+/* I can't edit the :hover for this, but what I CAN do is this LMAO */
+.dd-list-item:hover {
+  filter: hue-rotate(193deg);
+  opacity: 86%;
 }

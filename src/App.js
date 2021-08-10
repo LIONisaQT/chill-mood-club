@@ -1,5 +1,7 @@
 import './App.css';
-import YouTubeEmbed from './YouTubeEmbed';
+import IFrame from './IFrame';
+import PlaylistSelect from './Dropdown/PlaylistSelect';
+import BackgroundSelect from './Dropdown/BackgroundSelect';
 
 function App() {
   return (
@@ -9,49 +11,44 @@ function App() {
 				<IFrame />
 			</div>
     </div>
-  );
+  )
 }
 
 function LeftBar() {
 	return (
 		<div className="LeftBar">
 			<TopHeader />
-			<PlaylistSelect />
-			<BackgroundSelect />
+			<hr className="Divider"></hr>
+			<PlaylistSection />
+			<BackgroundSection />
 		</div>
-	);
+	)
 }
 
 function TopHeader() {
 	return (
-		<div className="TopHeader">
+		<div className="TopHeader Centered">
 			<h3>Chill Mood Club</h3>
 		</div>
-	);
+	)
 }
 
-function PlaylistSelect() {
+function PlaylistSection() {
 	return (
-		<div className="PlaylistSelect">
-			<p>Playlist select</p>
+		<div className="PlaylistSection">
+			<p className="Centered">Choose a playlist</p>
+			<PlaylistSelect />
 		</div>
-	);
+	)
 }
 
-function BackgroundSelect() {
+function BackgroundSection() {
 	return (
-		<div className="BackgroundSelect">
-			<p>Background select</p>
+		<div className="BackgroundSection">
+			<p className="Centered">Adjust BG sound</p>
+			<BackgroundSelect />
 		</div>
-	);
-}
-
-function IFrame() {
-	return (
-		<div className="IFrameContainer">
-			<YouTubeEmbed embedId="5qap5aO4i9A" />
-		</div>
-	);
+	)
 }
 
 export default App;
