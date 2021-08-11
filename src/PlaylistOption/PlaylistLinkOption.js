@@ -4,8 +4,8 @@ import { Component } from "react";
 const Utility = require('../Utility/Utility');
 
 class PlaylistLinkOption extends Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.state = {value: ''};
 		
 		this.handleChange = this.handleChange.bind(this);

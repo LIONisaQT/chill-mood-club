@@ -45,6 +45,56 @@
   margin-bottom: 30px;
 }
 
+.ShareAbout {
+  font-size: medium;
+}
+
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 16px;
+  background-color: var(--navy);
+  color: var(--light-yellow);
+  white-space: pre-line;
+  text-align: center;
+  margin: 0;
+}
+
+.ModalButton {
+  margin: 0 8px;
+  display: inline-block;
+}
+
+.ModalButton p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.ShareModal {
+  padding: 20px;
+  width: 300px;
+}
+
+.AboutModal {
+  padding: 50px;
+  width: 510px;
+}
+
+.ModalText {
+  margin: 0;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 60%);
+}
+
 .Divider {
   border: none;
   height: 2px;
