@@ -15,7 +15,7 @@ function BackgroundSelect() {
 	};
 
 	const backgrounds = [];
-	for (var background in backgroundData) {
+	for (let background in backgroundData) {
 		const label = backgroundData[background].label;
 		const value = backgroundData[background].value;
 		backgrounds.push({label, value});

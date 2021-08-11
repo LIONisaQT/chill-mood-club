@@ -1,5 +1,6 @@
 import PlaylistOption from "./PlaylistOption";
 
+// TODO: Fix "Warning: Each child in a list should have a unique 'key' prop." coming from here.
 function PlaylistOptionParent(props) {
 	const playlists = [];
 	if (props.data != null) {

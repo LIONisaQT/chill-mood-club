@@ -16,7 +16,7 @@ function PlaylistSelect() {
 	};
 
 	const playlists = [];
-	for (var playlist in playlistData)
+	for (let playlist in playlistData)
 	{
 		const label = playlistData[playlist].label;
 		const value = playlistData[playlist].value;
