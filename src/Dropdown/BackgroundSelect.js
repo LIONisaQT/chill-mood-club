@@ -1,44 +1,25 @@
+import { useState } from 'react';
 import { Dropdown } from 'reactjs-dropdown-component';
 const customDropdown = require('./CustomDropdownValues');
+const backgroundData = require('../Data/BackgroundData');
 
 function BackgroundSelect() {
-	const backgrounds = [
-		{
-			label: 'Rain',
-			value: 'rain',
-			emoji: '🌧️',
-		},
-		{
-			label: 'Forest',
-			value: 'forest',
-			emoji: '🌲',
-		},
-		{
-			label: 'Waves',
-			value: 'waves',
-			emoji: '🌊',
-		},
-		{
-			label: 'Cafe',
-			value: 'cafe',
-			emoji: '☕',
-		},
-		{
-			label: 'City',
-			value: 'city',
-			emoji: '🏙️',
-		},
-		{
-			label: 'River',
-			value: 'river',
-			emoji: '🏞️',
-		},
-		{
-			label: 'In-flight',
-			value: 'in-flight',
-			emoji: '✈️',
-		},
-	];
+	const defaultLabel = backgroundData.rain.label;
+	const defaultValue = backgroundData.rain.value;
+	const defaultBackground = {label: defaultLabel, value: defaultValue};
+
+	const [currentBackground, setBackground] = useState(defaultBackground);
+
+	const backgroundSelected = (background) => {
+		setBackground(background);
+	};
+
+	const backgrounds = [];
+	for (var background in backgroundData) {
+		const label = backgroundData[background].label;
+		const value = backgroundData[background].value;
+		backgrounds.push({label, value});
+	}
 
 	return (
 		<div className="BackgroundSelect">
@@ -46,8 +27,8 @@ function BackgroundSelect() {
 				name="background"
 				title="Rain"
 				list={backgrounds}
-				select={{value: 'rain'}}
-				onChange={customDropdown.onClick}
+				select={{value: currentBackground.value}}
+				onChange={backgroundSelected}
 				styles={customDropdown.styles}
 			/>
 		</div>

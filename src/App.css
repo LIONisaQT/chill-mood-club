@@ -74,7 +74,7 @@ iframe {
 }
 
 /* I can't edit the :hover for this, but what I CAN do is this LMAO */
-.dd-list-item:hover {
+/* .dd-list-item:hover {
   filter: hue-rotate(193deg);
   opacity: 86%;
-}
+} */

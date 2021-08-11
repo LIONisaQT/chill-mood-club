@@ -44,6 +44,6 @@ module.exports = {
 		},
 	},
 	onClick: function(item, name) {
-		console.log(item);
+		// console.log(item);
 	}
 }
