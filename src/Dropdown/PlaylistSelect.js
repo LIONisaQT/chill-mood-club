@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Dropdown } from 'reactjs-dropdown-component';
+import PlaylistOptionParent from '../PlaylistOption/PlaylistOptionParent';
 const customDropdown = require('./CustomDropdownValues');
 const playlistData = require('../Data/PlaylistData');
 
@@ -32,6 +33,7 @@ function PlaylistSelect() {
 				onChange={playlistSelected}
 				styles={customDropdown.styles}
 			/>
+			<PlaylistOptionParent data={playlistData[currentPlaylist.value].playlists}/>
 		</div>
 	)
 }

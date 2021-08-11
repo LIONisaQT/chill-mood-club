@@ -78,3 +78,19 @@ iframe {
   filter: hue-rotate(193deg);
   opacity: 86%;
 } */
+
+.PlaylistOptionParent {
+  margin: 20px -15px -20px;
+  display: inline-block;
+}
+
+.PlaylistOption {
+  margin: 0px 15px 20px;
+  float: left;
+  display: inline;
+  color: var(--light-purple);
+}
+
+.PlaylistOption:hover {
+  cursor: pointer;
+}
