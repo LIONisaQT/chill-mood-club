@@ -1,3 +1,4 @@
+import PlaylistLinkOption from "./PlaylistLinkOption";
 import PlaylistOption from "./PlaylistOption";
 
 // TODO: Fix "Warning: Each child in a list should have a unique 'key' prop." coming from here.
@@ -8,7 +9,7 @@ function PlaylistOptionParent(props) {
 			playlists.push(<PlaylistOption index={i + 1} link={props.data[i]} />);
 		}
 	} else {
-		playlists.push(<p>Input field here</p>)
+		playlists.push(<PlaylistLinkOption />)
 	}
 
 	return (

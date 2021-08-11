@@ -44,7 +44,7 @@
 .Divider {
   border: none;
   height: 2px;
-  background: var(--light-purple-fade);
+  background: var(--light-purple-30);
   border-radius: 8px;
 }
 
@@ -84,8 +84,11 @@ iframe {
   display: inline-block;
 }
 
-.PlaylistOption {
+.PlaylistOptionMargin {
   margin: 0px 15px 20px;
+}
+
+.PlaylistOption {
   float: left;
   display: inline;
   color: var(--light-purple);
@@ -93,4 +96,24 @@ iframe {
 
 .PlaylistOption:hover {
   cursor: pointer;
+}
+
+.LinkInstruction {
+  color: var(--light-purple);
+  text-align: center;
+}
+
+.PlaylistInput {
+  background-color: var(--light-purple-10);
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 6px;
+  color: var(--light-yellow);
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.PlaylistInput::placeholder {
+  color: var(--light-purple);
 }
