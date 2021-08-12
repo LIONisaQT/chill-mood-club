@@ -32,7 +32,7 @@ function BackgroundSelect() {
 				onChange={backgroundSelected}
 				styles={customDropdown.styles}
 			/>
-			<BackgroundPlayerParent />
+			<BackgroundPlayerParent emoji={backgroundData[currentBackground.value].emoji} />
 		</div>
 	)
 }

@@ -67,7 +67,7 @@ function PlaylistSection() {
 
 function BackgroundSection() {
 	return (
-		<div className="BackgroundSection">
+		<div>
 			<p className="Centered">Adjust BG sound</p>
 			<BackgroundSelect />
 		</div>

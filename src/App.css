@@ -173,7 +173,15 @@ iframe {
 }
 
 .BackgroundControls {
-  margin-top: 30px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 25px 1fr 25px;
+  gap: 10px;
+}
+
+.BackgroundControls p {
+  margin: 0 0 8px;
+  font-size: 24px;
 }
 
 .SliderContainer {
@@ -225,4 +233,9 @@ iframe {
   height: 18px;
   border: none;
   background-color: var(--light-purple);
+}
+
+.ToggleButton {
+  margin-top: 9px;
+  height: 20px;
 }
