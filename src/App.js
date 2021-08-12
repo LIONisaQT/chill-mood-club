@@ -59,7 +59,6 @@ function TopHeader() {
 function PlaylistSection() {
 	return (
 		<div className="PlaylistSection">
-			<p className="Centered">Choose a playlist</p>
 			<PlaylistSelect />
 		</div>
 	)
@@ -67,8 +66,7 @@ function PlaylistSection() {
 
 function BackgroundSection() {
 	return (
-		<div>
-			<p className="Centered">Adjust BG sound</p>
+		<div className="BackgroundSection">
 			<BackgroundSelect />
 		</div>
 	)

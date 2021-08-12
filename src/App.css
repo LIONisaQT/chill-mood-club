@@ -12,14 +12,10 @@
 .App {
   display: flex;
   flex-direction: column;
-  /* align-items: center;
-  justify-content: center;
-  text-align: center; */
   max-height: 100vh;
   max-width: 100vw;
-  font-size: calc(10px + 2vmin);
   color: var(--light-yellow);
-  font-size: medium;
+  font-size: 14px;
 }
 
 .Centered {
@@ -127,12 +123,6 @@ iframe {
 	height: 100%;
 }
 
-/* I can't edit the :hover for this, but what I CAN do is this LMAO */
-/* .dd-list-item:hover {
-  filter: hue-rotate(193deg);
-  opacity: 86%;
-} */
-
 .PlaylistOptionParent {
   margin: 20px -15px -20px;
   display: inline-block;
@@ -150,6 +140,10 @@ iframe {
 
 .PlaylistOption:hover {
   cursor: pointer;
+}
+
+.SelectedIndex {
+  color: var(--light-yellow);
 }
 
 .LinkInstruction {

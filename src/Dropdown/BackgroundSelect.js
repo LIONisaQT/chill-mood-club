@@ -5,8 +5,9 @@ const customDropdown = require('./CustomDropdownValues');
 const backgroundData = require('../Data/BackgroundData');
 
 function BackgroundSelect() {
-	const defaultLabel = backgroundData.rain.label;
-	const defaultValue = backgroundData.rain.value;
+	const defaultSelection = backgroundData.rain;
+	const defaultLabel = defaultSelection.label;
+	const defaultValue = defaultSelection.value;
 	const defaultBackground = {label: defaultLabel, value: defaultValue};
 
 	const [currentBackground, setBackground] = useState(defaultBackground);
@@ -24,9 +25,10 @@ function BackgroundSelect() {
 
 	return (
 		<div className="BackgroundSelect">
+			<p className="Centered">Adjust BG sound</p>
 			<Dropdown
 				name="background"
-				title="Rain"
+				title={currentBackground.label}
 				list={backgrounds}
 				select={{value: currentBackground.value}}
 				onChange={backgroundSelected}

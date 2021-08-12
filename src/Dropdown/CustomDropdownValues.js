@@ -9,7 +9,7 @@ module.exports = {
 	styles: {
 		wrapper: {
 			color: navy,
-			fontSize: 'medium',
+			fontSize: '14px',
 			width: '100%',
 		},
 		header: {
@@ -18,7 +18,7 @@ module.exports = {
 			border: 'none',
 			borderRadius: '6px',
 		},
-		headerTitle: { 'fontWeight': 'normal' },
+		headerTitle: { 'fontWeight': '600' },
 		// headerArrowUpIcon: { color: 'red' },
 		// headerArrowDownIcon: { color: 'blue' },
 		// checkIcon: { color: 'red' },
@@ -38,7 +38,7 @@ module.exports = {
 		},
 		listItem: {
 			color: lightPurple,
-			fontSize: 'medium',
+			fontSize: '14px',
 			fontWeight: 'normal',
 			borderRadius: '6px',
 		},

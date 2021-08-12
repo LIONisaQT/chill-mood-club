@@ -5,8 +5,9 @@ const customDropdown = require('./CustomDropdownValues');
 const playlistData = require('../Data/PlaylistData');
 
 function PlaylistSelect() {
-	const defaultLabel = playlistData.lofi.label;
-	const defaultValue = playlistData.lofi.value;
+	const defaultSelection = playlistData.lofi;
+	const defaultLabel = defaultSelection.label;
+	const defaultValue = defaultSelection.value;
 	const defaultPlaylist = {label: defaultLabel, value: defaultValue};
 
 	const [currentPlaylist, setPlaylist] = useState(defaultPlaylist);
@@ -25,15 +26,16 @@ function PlaylistSelect() {
 
 	return (
 		<div className="PlaylistSelect">
+			<p className="Centered ">Choose a playlist</p>
 			<Dropdown
 				name="playlist"
-				title="Lo-fi"
+				title={currentPlaylist.label}
 				list={playlists}
 				select={{value: currentPlaylist.value}}
 				onChange={playlistSelected}
 				styles={customDropdown.styles}
 			/>
-			<PlaylistOptionParent data={playlistData[currentPlaylist.value].playlists} />
+			<PlaylistOptionParent playlistName={currentPlaylist.value} data={playlistData[currentPlaylist.value].playlists} />
 		</div>
 	)
 }
