@@ -26,11 +26,12 @@ class Modal extends Component {
 				<p onClick={this.handleOpenModal}>{this.props.label}</p>
 				<ReactModal
 					isOpen={this.state.showModal}
+					appElement={document.getElementById('root') || undefined}
 					onRequestClose={this.handleCloseModal}
 					className={`Modal ${this.props.css}`} // TODO: Figure out how to use the styles property.
 					overlayClassName="Overlay"
 					>
-						<p class="ModalText">{this.props.contents}</p>
+						<p className="ModalText">{this.props.contents}</p>
 						{/* <button onClick={this.handleCloseModal}>Close Modal</button> */}
 					</ReactModal>
 			</div>
