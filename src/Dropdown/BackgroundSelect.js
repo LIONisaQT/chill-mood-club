@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Dropdown } from 'reactjs-dropdown-component';
+import BackgroundPlayerParent from '../BackgroundPlayer/BackgroundPlayerParent';
 const customDropdown = require('./CustomDropdownValues');
 const backgroundData = require('../Data/BackgroundData');
 
@@ -31,6 +32,7 @@ function BackgroundSelect() {
 				onChange={backgroundSelected}
 				styles={customDropdown.styles}
 			/>
+			<BackgroundPlayerParent />
 		</div>
 	)
 }

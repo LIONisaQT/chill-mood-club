@@ -171,3 +171,58 @@ iframe {
 .PlaylistInput::placeholder {
   color: var(--light-purple);
 }
+
+.BackgroundControls {
+  margin-top: 30px;
+}
+
+.SliderContainer {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 4px;
+  width: calc(100% - 3px);
+  background-color: var(--light-purple-30);
+  border-radius: 15px;
+  outline: none;
+}
+
+.SliderActual {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 4px;
+  background: var(--light-purple);
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
+}
+
+.Slider {
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 100%;
+  -webkit-appearance: none;
+  outline: none;
+  height: 0;
+  cursor: pointer;
+}
+
+.Slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: var(--light-purple);
+  border-radius: 6px;
+  width: 6px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.Slider::-moz-range-thumb {
+  width: 6px;
+  height: 18px;
+  border: none;
+  background-color: var(--light-purple);
+}

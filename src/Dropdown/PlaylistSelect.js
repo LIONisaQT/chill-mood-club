@@ -33,7 +33,7 @@ function PlaylistSelect() {
 				onChange={playlistSelected}
 				styles={customDropdown.styles}
 			/>
-			<PlaylistOptionParent data={playlistData[currentPlaylist.value].playlists}/>
+			<PlaylistOptionParent data={playlistData[currentPlaylist.value].playlists} />
 		</div>
 	)
 }
