@@ -4,14 +4,16 @@ const assetPath = process.env.PUBLIC_URL + '/assets/';
 class ToggleButton extends Component {
 	constructor() {
 		super();
-		this.state = {isPlaying: false};
+		this.state = {isPlaying: true};
 
 		this.onClick = this.onClick.bind(this);
 	}
 
 	onClick(event) {
 		this.setState({isPlaying: !this.state.isPlaying});
-		event.target.src = `${assetPath}${this.state.isPlaying ? 'pause' : 'play'}.png`;
+		event.target.src = `${assetPath}${this.state.isPlaying ? 'play' : 'pause'}.png`;
+		let bgAudio = document.getElementById('backgroundAudio');
+		this.state.isPlaying ? bgAudio.pause() : bgAudio.play();
 	}
 
 	render() {

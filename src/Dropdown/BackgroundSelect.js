@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Dropdown } from 'reactjs-dropdown-component';
 import BackgroundPlayerParent from '../BackgroundPlayer/BackgroundPlayerParent';
 const customDropdown = require('./CustomDropdownValues');
@@ -11,6 +11,19 @@ function BackgroundSelect() {
 	const defaultBackground = {label: defaultLabel, value: defaultValue};
 
 	const [currentBackground, setBackground] = useState(defaultBackground);
+
+	useEffect(
+		() => {
+			let url = backgroundData[currentBackground.value].url;
+			let bgPlayer = document.getElementById('backgroundAudio');
+			bgPlayer.volume = 0.5;
+			bgPlayer.src = url;
+			bgPlayer.play().catch((e) => {
+				// console.error(e);
+			});
+		},
+		[currentBackground]
+	)
 
 	const backgroundSelected = (background) => {
 		setBackground(background);
@@ -25,6 +38,7 @@ function BackgroundSelect() {
 
 	return (
 		<div className="BackgroundSelect">
+			<audio id="backgroundAudio" src="" loop></audio>
 			<p className="Centered">Adjust BG sound</p>
 			<Dropdown
 				name="background"

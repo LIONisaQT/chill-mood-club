@@ -3,7 +3,7 @@ import { Component } from "react";
 class SliderContainer extends Component {
 	constructor() {
 		super();
-		this.state = {value: 80};
+		this.state = {value: 50};
 
 		this.handleChange = this.handleChange.bind(this);
 	}
@@ -11,6 +11,7 @@ class SliderContainer extends Component {
 	handleChange(event) {
 		this.setState({value: event.target.value});
 		document.getElementById('SliderActual').style.width = event.target.value + '%';
+		document.getElementById('backgroundAudio').volume = event.target.value / 100;
 	}
 
 	render() {

@@ -204,7 +204,7 @@ iframe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80%;
+  width: 50%;
   height: 4px;
   background: var(--light-purple);
   border-radius: 15px;
