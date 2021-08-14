@@ -7,6 +7,7 @@
 #root {
   height: 100vh;
   background: linear-gradient(140deg, rgba(44,50,129,1) 0%, rgba(94,80,152,1) 50%, rgba(180,118,167,1) 87%, rgba(228,172,95,1) 100%);
+  overflow: auto;
 }
 
 .App::-webkit-scrollbar {
@@ -20,7 +21,6 @@
   max-width: 100vw;
   color: var(--light-yellow);
   font-size: 14px;
-  overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
