@@ -57,6 +57,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  outline: none;
   border-radius: 16px;
   background-color: var(--navy);
   color: var(--light-yellow);
@@ -182,7 +183,7 @@ iframe {
 }
 
 .BackgroundControls p {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   font-size: 24px;
 }
 
@@ -196,6 +197,7 @@ iframe {
   background-color: var(--light-purple-30);
   border-radius: 15px;
   outline: none;
+  cursor: pointer;
 }
 
 .SliderActual {
@@ -235,9 +237,16 @@ iframe {
   height: 18px;
   border: none;
   background-color: var(--light-purple);
+  cursor: pointer;
 }
 
 .ToggleButton {
   margin-top: 9px;
   height: 20px;
+  cursor: pointer;
+  transition: 0.33s ease;
+}
+
+.ToggleButton:hover {
+  filter: sepia(100%);
 }
