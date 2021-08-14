@@ -6,7 +6,13 @@
 
 #root {
   height: 100vh;
-  background: linear-gradient(140deg, rgba(44,50,129,1) 0%, rgba(94,80,152,1) 50%, rgba(180,118,167,1) 87%, rgba(228,172,95,1) 100%);
+
+  /* MOBILE */
+  /* background: linear-gradient(150deg, rgba(62,70,166,1) 16%, rgba(151,108,181,1) 79%);  */
+
+  /* DESKTOP */
+  background: linear-gradient(150deg, rgba(62,70,166,1) 16%, rgba(151,108,181,1) 58%, rgba(255,171,137,1) 100%);
+  
   overflow: auto;
 }
 
@@ -34,11 +40,15 @@
     max-width: calc(1600px + 2 * 80px);
     margin: auto;
   }
+
+  .Grid {
+    grid-template-columns: 189px minmax(1100px, 1fr);
+  }
 }
 
 .Grid {
   display: grid;
-  grid-template-columns: 189px minmax(1100px, 1fr);
+  grid-template-columns: 189px minmax(900px, 1fr);
   gap: 0 80px;
   margin: 80px;
 }
@@ -46,6 +56,10 @@
 .TopHeader {
   font-size:x-large;
   margin-bottom: 30px;
+}
+
+.Title {
+  margin: 0 0 20px;
 }
 
 .ShareAbout {

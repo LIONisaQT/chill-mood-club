@@ -46,7 +46,7 @@ function TopHeader() {
 
 	return (
 		<div className="TopHeader Centered">
-			<h3>Chill Mood Club</h3>
+			<h3 className="Title">Chill Mood Club</h3>
 			<div className="ShareAbout">
 				<Modal css="ShareModal" label="Share" contents={share} />
 				|
