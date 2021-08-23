@@ -135,7 +135,7 @@
   position: relative;
 	width: 100%;
 	padding-top: 56.25%;
-  margin: auto;
+  margin: 0 auto auto;
 }
 
 iframe {
@@ -238,7 +238,7 @@ iframe {
 }
 
 .LoopContainer .Checkmark:after {
-  left: 5px;
+  left: 6px;
   top: 1px;
   width: 5px;
   height: 11px;

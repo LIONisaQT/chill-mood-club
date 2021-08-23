@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Dropdown } from 'reactjs-dropdown-component';
 import BackgroundPlayerParent from '../BackgroundPlayer/BackgroundPlayerParent';
+import {ReactComponent as ArrowUpIcon} from './arrowUp.svg';
+import {ReactComponent as ArrowDownIcon} from './arrowDown.svg';
 const customDropdown = require('./CustomDropdownValues');
 const backgroundData = require('../Data/BackgroundData');
 
@@ -47,6 +49,9 @@ function BackgroundSelect() {
 				select={{value: currentBackground.value}}
 				onChange={backgroundSelected}
 				styles={customDropdown.styles}
+				checkIcon={"✨"}
+				arrowUpIcon={<ArrowUpIcon />}
+				arrowDownIcon={<ArrowDownIcon />}
 			/>
 			<BackgroundPlayerParent emoji={backgroundData[currentBackground.value].emoji} />
 		</div>

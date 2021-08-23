@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Dropdown } from 'reactjs-dropdown-component';
 import LoopContainer from '../PlaylistOption/LoopContainer';
 import PlaylistOptionParent from '../PlaylistOption/PlaylistOptionParent';
+import {ReactComponent as ArrowUpIcon} from './arrowUp.svg';
+import {ReactComponent as ArrowDownIcon} from './arrowDown.svg';
 const customDropdown = require('./CustomDropdownValues');
 const playlistData = require('../Data/PlaylistData');
 
@@ -35,6 +37,9 @@ function PlaylistSelect() {
 				select={{value: currentPlaylist.value}}
 				onChange={playlistSelected}
 				styles={customDropdown.styles}
+				checkIcon={"✨"}
+				arrowUpIcon={<ArrowUpIcon />}
+				arrowDownIcon={<ArrowDownIcon />}
 			/>
 			<PlaylistOptionParent playlistName={currentPlaylist.value} data={playlistData[currentPlaylist.value].playlists} />
 			<LoopContainer />

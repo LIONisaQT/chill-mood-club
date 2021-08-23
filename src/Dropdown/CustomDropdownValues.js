@@ -19,9 +19,6 @@ module.exports = {
 			borderRadius: '6px',
 		},
 		headerTitle: { 'fontWeight': 'bold' },
-		// headerArrowUpIcon: { color: 'red' },
-		// headerArrowDownIcon: { color: 'blue' },
-		// checkIcon: { color: 'red' },
 		list: {
 			boxShadow: '0 0',
 			WebkitBoxShadow: 0,
