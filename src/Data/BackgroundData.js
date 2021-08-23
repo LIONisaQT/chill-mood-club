@@ -33,7 +33,7 @@ module.exports = {
 		label: 'River',
 		value: 'river',
 		emoji: '🏞️',
-		url: 'https://chill-mood-club.s3.us-west-1.amazonaws.com/river.mov',
+		url: 'https://chill-mood-club.s3.us-west-1.amazonaws.com/river.mp3',
 	},
 	inflight: {
 		label: 'In-flight',

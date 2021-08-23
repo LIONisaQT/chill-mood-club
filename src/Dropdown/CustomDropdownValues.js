@@ -18,7 +18,7 @@ module.exports = {
 			border: 'none',
 			borderRadius: '6px',
 		},
-		headerTitle: { 'fontWeight': '600' },
+		headerTitle: { 'fontWeight': 'bold' },
 		// headerArrowUpIcon: { color: 'red' },
 		// headerArrowDownIcon: { color: 'blue' },
 		// checkIcon: { color: 'red' },

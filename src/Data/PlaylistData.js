@@ -1,6 +1,6 @@
 module.exports = {
 	lofi: {
-		label: "Lo-fi",
+		label: "Lo-fi & Jazz",
 		value: "lofi",
 		playlists: [
 			"https://www.youtube.com/watch?v=5qap5aO4i9A",
@@ -13,7 +13,7 @@ module.exports = {
 		]
 	},
 	kpop: {
-		label: "K-Pop",
+		label: "Korean",
 		value: "kpop",
 		playlists: [
 			"https://www.youtube.com/watch?v=QNS3SXYyaUY&list=PL5FeYIiqkJGrIHcXmkcUvQUCHN-h3eyay",
@@ -22,7 +22,7 @@ module.exports = {
 		]
 	},
 	jpop: {
-		label: "J-Pop",
+		label: "Japanese",
 		value: "jpop",
 		playlists: [
 			"https://www.youtube.com/watch?v=1gSe78TIEEk",
@@ -32,7 +32,7 @@ module.exports = {
 		]
 	},
 	anime: {
-		label: "Anime",
+		label: "Animation",
 		value: "anime",
 		playlists: [
 			"https://www.youtube.com/watch?v=UoMbwCoJTYM",
