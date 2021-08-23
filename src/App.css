@@ -63,6 +63,10 @@
   margin-bottom: 20px;
 }
 
+.LogoAbout {
+  width: 50%;
+}
+
 .Title {
   margin: 0 0 20px;
 }
@@ -93,7 +97,7 @@
 }
 
 .ShareModal {
-  padding: 20px;
+  padding: 30px 20px 20px;
   width: 300px;
 }
 
@@ -114,6 +118,74 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 60%);
+}
+
+.ModalClose {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: transparent;
+  border: none;
+  color: var(--light-yellow);
+  font-size: x-large;
+  cursor: pointer;
+  transition: 0.33s ease;
+}
+
+.ModalClose:hover {
+  color: var(--light-purple);
+}
+
+.ShareModal button {
+  margin: 6px 10px 0 0;
+}
+
+.AboutModal button {
+  margin: 16px 20px 0 0;
+}
+
+.ShareTitle {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.ShareLine {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  text-align: center;
+}
+
+.LinkArea {
+  display: inline;
+  text-align: left;
+  background-color: var(--light-purple-10);
+  font-size: 16px;
+  color: var(--light-purple);
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  padding: 8px 24px;
+  margin-right: -4px;
+}
+
+.LinkArea::selection {
+  background-color: var(--navy);
+  color: var(--light-yellow);
+}
+
+.CopyButton {
+  display: inline;
+  background-color: var(--light-purple);
+  color: var(--navy);
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  border: 0;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 !important;
 }
 
 .Divider {
