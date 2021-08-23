@@ -152,7 +152,7 @@ iframe {
 }
 
 .PlaylistOptionParent {
-  margin: 20px -15px -20px;
+  margin: 20px -15px 0;
   display: inline-block;
 }
 
@@ -192,6 +192,61 @@ iframe {
 
 .PlaylistInput::placeholder {
   color: var(--light-purple);
+}
+
+.LoopContainer {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 32px;
+  user-select: none;
+}
+
+.LoopContainer input {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.Checkmark {
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  height: 18px;
+  width: 18px;
+  background-color: var(--light-purple-10);
+  border-radius: 4px;
+}
+
+.LoopContainer:hover input~.Checkmark {
+  background-color: var(--light-purple-30);
+  transition: 0.33s ease;
+}
+
+.LoopContainer input:checked~.Checkmark {
+  background-color: var(--light-purple-30);
+}
+
+.Checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.LoopContainer input:checked~.Checkmark:after {
+  display: block;
+}
+
+.LoopContainer .Checkmark:after {
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 11px;
+  border: solid var(--light-yellow);
+  border-width: 0 2px 2px 0;
+  transform: rotate(40deg);
 }
 
 .BackgroundControls {

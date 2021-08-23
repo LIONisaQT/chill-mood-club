@@ -27,8 +27,11 @@ function IFrame() {
 		Loops playlist when we finish one. If it's not a playlist, plays the video again.
 	*/
 	const onEnd = (e) => {
-		process.player.playVideo();
-		process.player.loadPlaylist(e.target.getPlaylistId());
+		if (document.getElementById('loop-checkbox').checked)
+		{
+			process.player.playVideo();
+			process.player.loadPlaylist(e.target.getPlaylistId());
+		}
 	}
 
 	return (

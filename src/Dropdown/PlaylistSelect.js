@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Dropdown } from 'reactjs-dropdown-component';
+import LoopContainer from '../PlaylistOption/LoopContainer';
 import PlaylistOptionParent from '../PlaylistOption/PlaylistOptionParent';
 const customDropdown = require('./CustomDropdownValues');
 const playlistData = require('../Data/PlaylistData');
@@ -36,6 +37,7 @@ function PlaylistSelect() {
 				styles={customDropdown.styles}
 			/>
 			<PlaylistOptionParent playlistName={currentPlaylist.value} data={playlistData[currentPlaylist.value].playlists} />
+			<LoopContainer />
 		</div>
 	)
 }
