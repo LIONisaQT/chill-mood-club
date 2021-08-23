@@ -10,10 +10,10 @@ module.exports = {
 		let isPlaylist = false;
 		let youTubeId = '';
 
-		// TODO: Be able to grab IDs from links such as https://youtu.be/5qap5aO4i9A.
-		// Playlists do not have this problem.
-		if (link.includes('list='))
-		{
+		if (link.includes('https://youtu.be/')) {
+			isPlaylist = false;
+			youTubeId = /[^/]*$/.exec(link)[0];
+		} else if (link.includes('list=')) {
 			isPlaylist = true;
 			youTubeId = link.substr(link.indexOf('list=') + 5);
 		} else if (link.includes('watch?v=')) {
