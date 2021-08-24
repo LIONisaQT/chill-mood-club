@@ -21,11 +21,11 @@ function BackgroundSelect() {
 			let bgPlayer = document.getElementById('backgroundAudio');
 			bgPlayer.volume = 0.5;
 			bgPlayer.src = url;
-			bgPlayer.addEventListener('canplaythrough', event => {
+			bgPlayer.oncanplay = (event) => {
 				bgPlayer.play().catch((e) => {
 					console.error(e);
 				});
-			})
+			}
 		},
 		[currentBackground]
 	);
