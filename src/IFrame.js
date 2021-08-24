@@ -23,7 +23,7 @@ function IFrame() {
 		process.player = e.target;
 		process.player.setLoop(true); // This doesn't work either.
 
-		UpdatePlayerIfStorage();
+		updatePlayerIfHasStorage();
 	};
 
 	/*
@@ -49,15 +49,24 @@ function IFrame() {
 	)
 }
 
-function UpdatePlayerIfStorage() {
+function updatePlayerIfHasStorage() {
 	const plStorage = localStorage.getItem('currentPlaylist');
-	const indexStorage = localStorage.getItem('currentIndex');
+	if (plStorage === null) return;
 
-	if (plStorage !== null && indexStorage !== null) {
-		const plData = Utility.getVideoId(playlistData[plStorage].playlists[indexStorage]);
-		const loadData = Utility.setLoadData(plData);
-		Utility.playPlaylist(loadData);
+	let plData;
+
+	if (plStorage === 'own') {
+		plData = Utility.getVideoId(localStorage.getItem('customUrl'));
+	}	else {
+		const indexStorage = localStorage.getItem('currentIndex');
+		if (indexStorage === null) return;
+
+		plData = Utility.getVideoId(playlistData[plStorage].playlists[indexStorage]);
 	}
+
+	let loadData = Utility.setLoadData(plData);
+	Utility.playPlaylist(loadData);
+	
 }
 
 export default IFrame;

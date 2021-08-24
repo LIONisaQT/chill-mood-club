@@ -18,8 +18,12 @@ class PlaylistLinkOption extends Component {
 
 	handleSubmit(event) {
 		const playlistData = Utility.getVideoId(this.state.value);
+		if (playlistData === null) return; // URL was invalid.
+
 		const loadData = Utility.setLoadData(playlistData);
 		Utility.playPlaylist(loadData);
+		localStorage.setItem('currentPlaylist', 'own');
+		localStorage.setItem('customUrl', this.state.value);
 
 		event.preventDefault();
 	}
@@ -30,7 +34,13 @@ class PlaylistLinkOption extends Component {
 				<form onSubmit={this.handleSubmit} autoComplete="off">
 					<label>
 						<p className="LinkInstruction">Paste YouTube URL (playlist or video must be public)</p>
-						<input className="PlaylistInput" value={this.state.value} onChange={this.handleChange} type="text" placeholder="Enter URL"/>
+						<input
+							className="PlaylistInput"
+							value={this.state.value}
+							onChange={this.handleChange}
+							type="text"
+							placeholder="Enter URL"
+						/>
 					</label>
 				</form>
 			</div>
