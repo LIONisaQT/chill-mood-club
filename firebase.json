@@ -13,6 +13,7 @@
       }
     ]
   },
+  "cleanUrls": true,
   "emulators": {
     "hosting": {
       "port": 5000
