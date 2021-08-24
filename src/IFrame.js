@@ -1,6 +1,8 @@
 // Sauce: https://www.freecodecamp.org/news/use-the-youtube-iframe-api-in-react/
 
 import YouTube from 'react-youtube';
+import Utility from './Utility/Utility';
+const playlistData = require('./Data/PlaylistData');
 
 function IFrame() {
 	const opts = {
@@ -20,6 +22,8 @@ function IFrame() {
 	const onReady = (e) => {
 		process.player = e.target;
 		process.player.setLoop(true); // This doesn't work either.
+
+		UpdatePlayerIfStorage();
 	};
 
 	/*
@@ -37,12 +41,23 @@ function IFrame() {
 	return (
 		<div className="IFrameContainer">
 			<YouTube
-				videoId="5qap5aO4i9A" // Default playlist (lofi), replace with saved value later.
+				videoId="5qap5aO4i9A"
 				opts={opts}
 				onReady={(e) => onReady(e)}
 				onEnd={(e) => onEnd(e)} />
 		</div>
 	)
+}
+
+function UpdatePlayerIfStorage() {
+	const plStorage = localStorage.getItem('currentPlaylist');
+	const indexStorage = localStorage.getItem('currentIndex');
+
+	if (plStorage !== null && indexStorage !== null) {
+		const plData = Utility.getVideoId(playlistData[plStorage].playlists[indexStorage]);
+		const loadData = Utility.setLoadData(plData);
+		Utility.playPlaylist(loadData);
+	}
 }
 
 export default IFrame;

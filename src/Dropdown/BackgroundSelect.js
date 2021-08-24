@@ -7,7 +7,8 @@ const customDropdown = require('./CustomDropdownValues');
 const backgroundData = require('../Data/BackgroundData');
 
 function BackgroundSelect() {
-	const defaultSelection = backgroundData.rain;
+	const bgStorage = localStorage.getItem('currentBackground');
+	const defaultSelection = bgStorage === null ? backgroundData.rain : backgroundData[bgStorage];
 	const defaultLabel = defaultSelection.label;
 	const defaultValue = defaultSelection.value;
 	const defaultBackground = {label: defaultLabel, value: defaultValue};
@@ -20,15 +21,18 @@ function BackgroundSelect() {
 			let bgPlayer = document.getElementById('backgroundAudio');
 			bgPlayer.volume = 0.5;
 			bgPlayer.src = url;
-			bgPlayer.play().catch((e) => {
-				// console.error(e);
-			});
+			bgPlayer.addEventListener('canplaythrough', event => {
+				bgPlayer.play().catch((e) => {
+					console.error(e);
+				});
+			})
 		},
 		[currentBackground]
-	)
+	);
 
 	const backgroundSelected = (background) => {
 		setBackground(background);
+		localStorage.setItem('currentBackground', background.value);
 	};
 
 	const backgrounds = [];

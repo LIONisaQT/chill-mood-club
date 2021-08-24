@@ -8,7 +8,8 @@ const customDropdown = require('./CustomDropdownValues');
 const playlistData = require('../Data/PlaylistData');
 
 function PlaylistSelect() {
-	const defaultSelection = playlistData.lofi;
+	const plStorage = localStorage.getItem('currentPlaylist');
+	const defaultSelection = plStorage === null ? playlistData.lofi : playlistData[plStorage];
 	const defaultLabel = defaultSelection.label;
 	const defaultValue = defaultSelection.value;
 	const defaultPlaylist = {label: defaultLabel, value: defaultValue};
