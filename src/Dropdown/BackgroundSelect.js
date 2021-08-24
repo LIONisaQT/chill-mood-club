@@ -21,10 +21,11 @@ function BackgroundSelect() {
 			let bgPlayer = document.getElementById('backgroundAudio');
 			bgPlayer.volume = 0.5;
 			bgPlayer.src = url;
+			bgPlayer.play().catch((e) => {
+				console.error(e);
+			});
 			bgPlayer.oncanplay = (event) => {
-				bgPlayer.play().catch((e) => {
-					console.error(e);
-				});
+				// TODO: Should use this, before playing, but sometimes sounds don't load?
 			}
 		},
 		[currentBackground]
