@@ -1,32 +1,19 @@
-const { Component } = require("react");
-const assetPath = process.env.PUBLIC_URL + '/assets/';
+import Utility from "../Utility/Utility";
 
-class ToggleButton extends Component {
-	constructor() {
-		super();
-		this.state = {isPlaying: true};
+function ToggleButton() {
+	const clicked = ((event) => {
+		Utility.toggleBackgroundSound();
+	});
 
-		this.onClick = this.onClick.bind(this);
-	}
-
-	onClick(event) {
-		this.setState({isPlaying: !this.state.isPlaying});
-		event.target.src = `${assetPath}${this.state.isPlaying ? 'play' : 'pause'}.png`;
-		let bgAudio = document.getElementById('backgroundAudio');
-		this.state.isPlaying ? bgAudio.pause() : bgAudio.play();
-	}
-
-	render() {
-		return (
-			<img
-				className="ToggleButton"
-				id="BackgroundControl"
-				src={`${assetPath}pause.png`}
-				alt="Play"
-				onClick={this.onClick}
-			/>
-		)
-	}
+	return (
+		<img
+			className="ToggleButton"
+			id="BackgroundControl"
+			src={`${process.env.PUBLIC_URL}/assets/play.png`}
+			alt="Play"
+			onClick={clicked}
+		/>
+	)
 }
 
 export default ToggleButton;

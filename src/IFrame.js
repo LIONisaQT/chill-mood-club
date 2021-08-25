@@ -7,7 +7,7 @@ const playlistData = require('./Data/PlaylistData');
 function IFrame() {
 	const opts = {
     playerVars: {
-      autoplay: 1,														// Autoplay (on).
+      autoplay: 0,														// Autoplay (on).
 			enablejsapi: 1,													// Enable IFrame API controls (on).
 			fs: 1,																	// Fullscreen button (on).
 			iv_load_policy: 3,											// Annotations (off).
@@ -44,6 +44,7 @@ function IFrame() {
 				videoId="5qap5aO4i9A"
 				opts={opts}
 				onReady={(e) => onReady(e)}
+				onPlay={() => {Utility.playBackgroundSound()}}
 				onEnd={(e) => onEnd(e)} />
 		</div>
 	)
@@ -65,8 +66,7 @@ function updatePlayerIfHasStorage() {
 	}
 
 	let loadData = Utility.setLoadData(plData);
-	Utility.playPlaylist(loadData);
-	
+	Utility.cuePlaylist(loadData);
 }
 
 export default IFrame;

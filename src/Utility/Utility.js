@@ -1,3 +1,8 @@
+const backgroundData = require('../Data/BackgroundData');
+const assetPath = process.env.PUBLIC_URL + '/assets/';
+
+let isPlaying = false;
+
 module.exports = {
 	padWithZeroes: function(index) {
 		let value = '' + index;
@@ -43,5 +48,55 @@ module.exports = {
 	playPlaylist: function(loadData) {
 		process.player.loadPlaylist(loadData);
 		process.player.setVolume(50);
-	}
+	},
+	cuePlaylist: function(loadData) {
+		process.player.cuePlaylist(loadData);
+		process.player.setVolume(50);
+	},
+	playBackgroundSound: function(background) {
+		const bgPlayer = document.getElementById('backgroundAudio');
+
+		bgPlayer.volume = 0.5;
+		bgPlayer.src = this.getBackgroundUrl(background);
+		if (process.player != null) {
+			bgPlayer.play().catch((e) => {
+				console.error(e);
+			});
+
+			isPlaying = true;
+
+			const button = document.getElementById("BackgroundControl");
+			button.src = `${assetPath}pause.png`;
+		}
+		bgPlayer.oncanplay = (event) => {
+			// TODO: Should use this, before playing, but sometimes sounds don't load?
+		}
+	},
+	toggleBackgroundSound() {
+		const bgPlayer = document.getElementById('backgroundAudio');
+
+		if (!isPlaying) {
+			this.playBackgroundSound();
+			return;
+		}
+		
+		bgPlayer.pause();
+		isPlaying = false;
+
+		const button = document.getElementById("BackgroundControl");
+		button.src = `${assetPath}play.png`;
+	},
+	getBackgroundUrl: function(background) {
+		let bgValue = background;
+
+		if (bgValue == null) {
+			bgValue = localStorage.getItem('currentBackground');
+
+			if (bgValue == null) {
+				bgValue = "rain";
+			}
+		}
+
+		return backgroundData[bgValue].url;
+	},
 }

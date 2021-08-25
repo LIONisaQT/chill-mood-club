@@ -3,6 +3,7 @@ import { Dropdown } from 'reactjs-dropdown-component';
 import BackgroundPlayerParent from '../BackgroundPlayer/BackgroundPlayerParent';
 import {ReactComponent as ArrowUpIcon} from './arrowUp.svg';
 import {ReactComponent as ArrowDownIcon} from './arrowDown.svg';
+import Utility from '../Utility/Utility';
 const customDropdown = require('./CustomDropdownValues');
 const backgroundData = require('../Data/BackgroundData');
 
@@ -17,16 +18,7 @@ function BackgroundSelect() {
 
 	useEffect(
 		() => {
-			let url = backgroundData[currentBackground.value].url;
-			let bgPlayer = document.getElementById('backgroundAudio');
-			bgPlayer.volume = 0.5;
-			bgPlayer.src = url;
-			bgPlayer.play().catch((e) => {
-				console.error(e);
-			});
-			bgPlayer.oncanplay = (event) => {
-				// TODO: Should use this, before playing, but sometimes sounds don't load?
-			}
+			Utility.playBackgroundSound(currentBackground.value);
 		},
 		[currentBackground]
 	);
