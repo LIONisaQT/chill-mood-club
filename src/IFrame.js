@@ -22,6 +22,7 @@ function IFrame() {
 	const onReady = (e) => {
 		process.player = e.target;
 		process.player.setLoop(true); // This doesn't work either.
+		process.player.setVolume(50);
 
 		updatePlayerIfHasStorage();
 	};
