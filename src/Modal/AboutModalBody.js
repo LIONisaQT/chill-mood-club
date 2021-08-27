@@ -16,7 +16,7 @@ function AboutModalBody() {
 				<br />
 				Inspired by <a className="Link" href="https://imissmycafe.com/" target="_blank" rel="noreferrer">I Miss My Cafe</a> & <a className="Link" href="http://imissmybar.com/" target="_blank" rel="noreferrer">I Miss My Bar</a>
 				<br />
-				More info here
+				More info <a className="Link" href={`${window.location.href}about`} target="_blank" rel="noreferrer">here</a>
 			</p>
 		</div>
 	)
