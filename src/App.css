@@ -36,6 +36,18 @@
   text-align: center;
 }
 
+.FlexCenter {
+  margin: 0;
+  max-width: 1000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 16px;
+}
+
 @media screen and (min-width: 1921px) {
   .App {
     max-width: calc(1600px + 2 * 80px);
@@ -65,6 +77,10 @@
 
 .LogoAbout {
   width: 50%;
+}
+
+.LogoAboutFull {
+  width: 30%;
 }
 
 .Title {
