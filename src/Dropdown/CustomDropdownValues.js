@@ -29,7 +29,7 @@ module.exports = {
 			border: `2px solid ${lightPurpleFade}`,
 			padding: '0',
 			background: navy,
-			borderRadius: '6px',
+			borderRadius: '9px',
 			maxHeight: '100%',
 			overflow: 'hidden'
 		},

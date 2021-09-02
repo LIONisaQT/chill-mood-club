@@ -415,3 +415,8 @@ iframe {
   color: var(--light-yellow);
   text-decoration: underline;
 }
+
+.dd-list-item:hover {
+  background-color: var(--light-purple-30) !important;
+  color: var(--light-yellow) !important;
+}
