@@ -30,6 +30,7 @@ module.exports = {
 			}
 		}
 
+		console.log(`Utility::getVideoId(): `, {isPlaylist, youTubeId});
 		return [isPlaylist, youTubeId];
 	},
 	setLoadData: function(playlistData) {
@@ -43,9 +44,11 @@ module.exports = {
 			loadData.playlist = playlistData[1];
 		}
 
+		console.log(`Utility::setLoadData(): `, loadData);
 		return loadData;
 	},
 	playPlaylist: function(loadData) {
+		console.log(`Utility::playPlaylist(): Playing `, loadData);
 		process.player.loadPlaylist(loadData);
 		process.player.setVolume(50);
 	},

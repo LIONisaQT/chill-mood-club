@@ -32,8 +32,7 @@ function IFrame() {
 		Loops playlist when we finish one. If it's not a playlist, plays the video again.
 	*/
 	const onEnd = (e) => {
-		if (document.getElementById('loop-checkbox').checked)
-		{
+		if (document.getElementById('loop-checkbox').checked) {
 			process.player.playVideo();
 			process.player.loadPlaylist(e.target.getPlaylistId());
 		}
@@ -45,7 +44,7 @@ function IFrame() {
 				videoId="5qap5aO4i9A"
 				opts={opts}
 				onReady={(e) => onReady(e)}
-				onPlay={() => {Utility.playBackgroundSound()}}
+				onPlay={() => {Utility.playBackgroundSound(); console.log('Iframe: playing', process.player.getVideoUrl())}}
 				onEnd={(e) => onEnd(e)} />
 		</div>
 	)
