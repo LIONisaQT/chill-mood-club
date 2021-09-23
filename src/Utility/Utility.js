@@ -49,7 +49,17 @@ module.exports = {
 	},
 	playPlaylist: function(loadData) {
 		console.log(`Utility::playPlaylist(): Playing `, loadData);
-		process.player.loadPlaylist(loadData);
+		switch (loadData.listType) {
+			case 'user_uploads':
+				process.player.loadVideoById(loadData.playlist);
+				break;
+			case 'playlist':
+				process.player.loadPlaylist(loadData);
+				break;
+			default:
+				break;
+		}
+
 		process.player.setVolume(50);
 	},
 	cuePlaylist: function(loadData) {
