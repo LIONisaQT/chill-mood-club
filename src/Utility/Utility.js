@@ -30,7 +30,6 @@ module.exports = {
 			}
 		}
 
-		console.log(`Utility::getVideoId(): `, {isPlaylist, youTubeId});
 		return [isPlaylist, youTubeId];
 	},
 	setLoadData: function(playlistData) {
@@ -44,16 +43,15 @@ module.exports = {
 			loadData.playlist = playlistData[1];
 		}
 
-		console.log(`Utility::setLoadData(): `, loadData);
 		return loadData;
 	},
 	playPlaylist: function(loadData) {
-		console.log(`Utility::playPlaylist(): Playing `, loadData);
 		switch (loadData.listType) {
 			case 'user_uploads':
 				process.player.loadVideoById(loadData.playlist);
 				break;
 			case 'playlist':
+				process.player.loadVideoById('', 0); // Must clear video ID when switching playlists. See comment in #13.
 				process.player.loadPlaylist(loadData);
 				break;
 			default:

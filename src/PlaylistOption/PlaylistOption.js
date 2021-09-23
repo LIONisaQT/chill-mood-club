@@ -14,10 +14,8 @@ class PlaylistOption extends Component {
 
 	onClick() {
 		this.props.callback.call(this, this.props.playlistName, this.props.index - 1);
-		console.log(`getting video ID for ${this.props.playlistName}: ${this.props.index - 1}`);
 		const playlistData = Utility.getVideoId(this.props.link);
 		const loadData = Utility.setLoadData(playlistData);
-		console.log(`PlaylistOption::onClick() `, playlistData, loadData);
 		Utility.playPlaylist(loadData);
 	}
 

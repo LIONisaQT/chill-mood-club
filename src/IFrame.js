@@ -44,7 +44,7 @@ function IFrame() {
 				videoId="5qap5aO4i9A"
 				opts={opts}
 				onReady={(e) => onReady(e)}
-				onPlay={() => {Utility.playBackgroundSound(); console.log('Iframe: playing', process.player.getVideoUrl())}}
+				onPlay={() => Utility.playBackgroundSound()}
 				onEnd={(e) => onEnd(e)} />
 		</div>
 	)
