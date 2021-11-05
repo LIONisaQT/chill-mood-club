@@ -32,7 +32,7 @@ function PlaylistOptionParent(props) {
 			);
 		}
 	} else {
-		playlists.push(<PlaylistLinkOption />)
+		playlists.push(<PlaylistLinkOption key={'custom'} />)
 	}
 
 	return (
