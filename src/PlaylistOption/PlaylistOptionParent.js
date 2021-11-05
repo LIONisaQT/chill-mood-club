@@ -16,13 +16,14 @@ function PlaylistOptionParent(props) {
 		localStorage.setItem('currentPlaylist', playlistName);
 		localStorage.setItem('currentIndex', index);
 	};
-	
+
 	const playlists = [];
 	if (props.data != null) {
 		for (let i = 0; i < props.data.length; i++) {
 			playlists.push(
 				<PlaylistOption
 					// eslint-disable-next-line eqeqeq
+					key={i}
 					selected={currentPlaylist === props.playlistName && currentIndex == i} // TODO: Figure out why === won't work.
 					playlistName={props.playlistName}
 					index={i + 1}
