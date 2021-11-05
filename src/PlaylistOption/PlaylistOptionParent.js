@@ -22,8 +22,8 @@ function PlaylistOptionParent(props) {
 		for (let i = 0; i < props.data.length; i++) {
 			playlists.push(
 				<PlaylistOption
-					// eslint-disable-next-line eqeqeq
 					key={i}
+					// eslint-disable-next-line eqeqeq
 					selected={currentPlaylist === props.playlistName && currentIndex == i} // TODO: Figure out why === won't work.
 					playlistName={props.playlistName}
 					index={i + 1}

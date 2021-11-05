@@ -251,6 +251,42 @@
   }
 }
 
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+  #root {
+    height: 130vh;
+  }
+
+  .Grid {
+    margin: 5% 20px 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .Logo {
+    width: 70%;
+  }
+
+  .Divider {
+    display: none;
+  }
+
+  .PlaylistSection {
+    position: absolute;
+    margin-top: 30px;
+    top: 400px;
+    left: 40px;
+    right: 40px;
+  }
+
+  .BackgroundSection {
+    position: absolute;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    top: 640px;
+    left: 40px;
+    right: 40px;
+  }
+}
+
 .IFrameContainer {
   position: relative;
   width: 100%;
