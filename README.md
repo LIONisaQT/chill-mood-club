@@ -34,4 +34,4 @@ Runs `build` locally at [http://localhost:5000](http://localhost:5000).
 
 ### `firebase deploy`
 
-Deploys contents of `build` to [Chill Mood Club's web app](https://chill-mood-club.web.app/).
+Deploys contents of `build` to [Chill Mood Club's web app](https://chillmood.club/).
